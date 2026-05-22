@@ -73,13 +73,13 @@ LOGO_HTML = """<div class="lange-logo">
 </div>"""
 
 BOX_CSS = """
-.box { display:flex; gap:20px; align-items:flex-start;
+.box { display:flex; gap:24px; align-items:center;
   background:rgba(10,10,10,.55); border:1px solid rgba(201,168,76,.30);
-  border-radius:10px; padding:22px 30px; margin-bottom:18px; font-size:30px;
+  border-radius:10px; padding:26px 32px; margin-bottom:20px;
   backdrop-filter:blur(6px); }
-.arr { color:var(--gold); flex-shrink:0; font-size:26px; margin-top:3px; }
-.box strong { font-size:30px; font-weight:500; }
-.box .sub { font-size:27px; opacity:.88; font-weight:300; }
+.arr { color:var(--gold); flex-shrink:0; font-size:30px; }
+.box strong { font-size:36px; font-weight:500; line-height:1.3; }
+.box .sub { font-size:30px; opacity:.88; font-weight:300; display:block; margin-top:4px; }
 """
 
 def box(num, title, desc=""):
