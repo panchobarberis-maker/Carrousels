@@ -9,9 +9,11 @@ Optional front matter lines at the top of the file (before the title):
   excerpt: Short summary
   categories: 5, 12        # category IDs (GET /wp-json/wp/v2/categories)
 
-Credentials come from environment variables (never commit them):
-  WP_USER          WordPress login (e.g. FranciscoB)
-  WP_APP_PASSWORD  Application Password from Users -> Profile
+Credentials (never commit them), either:
+  - an environment API credential for langefirm.com (Basic auth), which the
+    proxy injects into every request, or
+  - WP_USER + WP_APP_PASSWORD environment variables (Application Password
+    from Users -> Profile).
   WP_URL           Site URL (default https://langefirm.com)
 """
 
@@ -24,7 +26,7 @@ API = f"{WP_URL}/wp-json/wp/v2"
 def auth_header():
     user, pwd = os.environ.get("WP_USER"), os.environ.get("WP_APP_PASSWORD")
     if not user or not pwd:
-        sys.exit("Missing WP_USER or WP_APP_PASSWORD environment variables.")
+        return {}  # rely on the environment credential injected by the proxy
     token = base64.b64encode(f"{user}:{pwd}".encode()).decode()
     return {"Authorization": f"Basic {token}"}
 
