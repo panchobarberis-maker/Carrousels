@@ -22,6 +22,8 @@ from pathlib import Path
 
 WP_URL = os.environ.get("WP_URL", "https://langefirm.com").rstrip("/")
 API = f"{WP_URL}/wp-json/wp/v2"
+# Cloudflare on langefirm.com blocks the default Python-urllib user agent (error 1010)
+UA = "Mozilla/5.0 (compatible; LangeBlogBot/1.0)"
 
 def auth_header():
     user, pwd = os.environ.get("WP_USER"), os.environ.get("WP_APP_PASSWORD")
@@ -32,7 +34,7 @@ def auth_header():
 
 def request(method, path, data=None, headers=None):
     req = urllib.request.Request(f"{API}{path}", data=data, method=method,
-                                 headers={**auth_header(), **(headers or {})})
+                                 headers={"User-Agent": UA, **auth_header(), **(headers or {})})
     try:
         with urllib.request.urlopen(req) as r:
             return json.loads(r.read())
