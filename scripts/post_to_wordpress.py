@@ -43,7 +43,9 @@ def request(method, path, data=None, headers=None):
 
 def to_html(text, is_markdown):
     if not is_markdown:
-        return text
+        # Wrap raw HTML in a Custom HTML block so WordPress doesn't run wpautop
+        # over it (which would inject <p>/<br> into the <style> and layout markup).
+        return f"<!-- wp:html -->\n{text}\n<!-- /wp:html -->"
     try:
         import markdown
         return markdown.markdown(text, extensions=["extra"])
@@ -79,6 +81,7 @@ def main():
     ap.add_argument("post_file", nargs="?")
     ap.add_argument("--image")
     ap.add_argument("--status", default="draft", choices=["draft", "publish", "pending"])
+    ap.add_argument("--update", type=int, metavar="POST_ID", help="Update an existing post instead of creating one")
     ap.add_argument("--check", action="store_true", help="Only verify credentials")
     args = ap.parse_args()
 
@@ -98,9 +101,10 @@ def main():
     if args.image:
         payload["featured_media"] = upload_image(args.image)
 
-    post = request("POST", "/posts", data=json.dumps(payload).encode(),
+    path = f"/posts/{args.update}" if args.update else "/posts"
+    post = request("POST", path, data=json.dumps(payload).encode(),
                    headers={"Content-Type": "application/json"})
-    print(f"Created {post['status']} post #{post['id']}: {post['link']}")
+    print(f"{'Updated' if args.update else 'Created'} {post['status']} post #{post['id']}: {post['link']}")
     print(f"Edit: {WP_URL}/wp-admin/post.php?post={post['id']}&action=edit")
 
 if __name__ == "__main__":
