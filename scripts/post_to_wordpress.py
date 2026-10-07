@@ -81,6 +81,7 @@ def main():
     ap.add_argument("post_file", nargs="?")
     ap.add_argument("--image")
     ap.add_argument("--status", default="draft", choices=["draft", "publish", "pending"])
+    ap.add_argument("--author", type=int, default=6, help="WordPress user ID (default 6 = Evan Lange)")
     ap.add_argument("--update", type=int, metavar="POST_ID", help="Update an existing post instead of creating one")
     ap.add_argument("--check", action="store_true", help="Only verify credentials")
     args = ap.parse_args()
@@ -93,7 +94,7 @@ def main():
         ap.error("post_file is required")
 
     title, body, meta = parse_post(args.post_file)
-    payload = {"title": title, "content": body, "status": args.status}
+    payload = {"title": title, "content": body, "status": args.status, "author": args.author}
     if meta.get("excerpt"):
         payload["excerpt"] = meta["excerpt"]
     if meta.get("categories"):
