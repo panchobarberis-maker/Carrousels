@@ -58,6 +58,10 @@ def clean(html):
     for p in soup.find_all("p"):
         if not p.get_text(strip=True) and not p.find(["img", "br", "a"]):
             p.decompose()
+    # Key sentences ("👉 ...") get the navy callout style from lf-legacy-posts.css
+    for p in soup.find_all("p"):
+        if p.get_text(strip=True).startswith("\U0001F449"):
+            p["class"] = ["lf-key"]
     _shift_headings(soup)
     out = str(soup)
     out = re.sub(r"\n{3,}", "\n\n", out).strip()

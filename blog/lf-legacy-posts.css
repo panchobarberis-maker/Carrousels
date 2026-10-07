@@ -30,7 +30,7 @@ body.single-post .elementor-widget-text-editor h2{position:relative;padding-left
 body.single-post .elementor-widget-text-editor h2::before{content:"";position:absolute;left:0;top:.18em;bottom:.18em;width:5px;border-radius:3px;background:linear-gradient(180deg,var(--lf-gold),var(--lf-copper))}
 body.single-post .elementor-widget-text-editor h3{color:var(--lf-copper)}
 body.single-post .elementor-widget-text-editor h4{color:#23293a;text-transform:uppercase;letter-spacing:.06em;font-size:15px}
-body.single-post .elementor-widget-text-editor strong,body.single-post .elementor-widget-text-editor b{background:linear-gradient(transparent 62%,rgba(244,184,63,.38) 62%);padding:0 1px}
+body.single-post .elementor-widget-text-editor strong,body.single-post .elementor-widget-text-editor b{background:linear-gradient(transparent 62%,rgba(244,184,63,.22) 62%);padding:0 1px}
 body.single-post .elementor-widget-text-editor a strong,body.single-post .elementor-widget-text-editor a b,body.single-post .elementor-widget-text-editor h1 strong,body.single-post .elementor-widget-text-editor h2 strong,body.single-post .elementor-widget-text-editor h3 strong{background:none}
 body.single-post .elementor-widget-text-editor a{text-decoration-color:var(--lf-gold);text-decoration-thickness:2px}
 body.single-post .elementor-widget-text-editor ul{list-style:none;padding-left:0}
@@ -42,3 +42,11 @@ body.single-post .elementor-widget-text-editor ol > li{counter-increment:lf;posi
 body.single-post .elementor-widget-text-editor ol > li::before{content:counter(lf);position:absolute;left:0;top:.05em;width:28px;height:28px;border-radius:50%;background:#23293a;color:var(--lf-gold);font-weight:700;font-size:14px;line-height:28px;text-align:center}
 body.single-post .elementor-widget-text-editor th{background:#23293a;border-bottom:3px solid var(--lf-gold)}
 body.single-post .elementor-widget-text-editor td:first-child{font-weight:600;color:var(--lf-ink)}
+/* Navy callouts: key sentences (paragraphs starting with 👉, tagged lf-key by the cleaner) and quotes */
+body.single-post .elementor-widget-text-editor p.lf-key{background:#23293a;color:#fff;border-radius:12px;padding:18px 22px;margin:1.4em 0;font-family:Inter,system-ui,sans-serif;font-size:18px;font-weight:600;line-height:1.5;box-shadow:inset 4px 0 0 var(--lf-gold)}
+body.single-post .elementor-widget-text-editor p.lf-key strong,body.single-post .elementor-widget-text-editor p.lf-key b{color:var(--lf-gold);background:none}
+body.single-post .elementor-widget-text-editor p.lf-key a{color:var(--lf-gold)}
+body.single-post .elementor-widget-text-editor blockquote{background:#23293a;color:#e6e8ee;border-left-color:var(--lf-gold)}
+body.single-post .elementor-widget-text-editor blockquote strong,body.single-post .elementor-widget-text-editor blockquote b{color:#fff;background:none}
+body.single-post .elementor-widget-text-editor ul ul,body.single-post .elementor-widget-text-editor ol ul{list-style:none;padding-left:0;margin:.2em 0 .3em 1.1em}
+body.single-post .elementor-widget-text-editor ul li::marker{content:""}
