@@ -1,0 +1,25 @@
+{
+ "schema-33085": {
+  "metadata": {
+   "title": "Article",
+   "type": "template",
+   "shortcode": "s-67911f11a6706",
+   "isPrimary": "1"
+  },
+  "articleSection": "%primary_taxonomy_terms%",
+  "headline": "%seo_title%",
+  "description": "Planning for the future can feel overwhelming, but with the guidance of an experienced attorney for will and power of attorney in Houston, you can secure peace of mind for yourself and your loved ones.",
+  "keywords": "%keywords%",
+  "@type": "BlogPosting",
+  "author": {
+   "@type": "Person",
+   "name": "%name%"
+  },
+  "datePublished": "%date(Y-m-dTH:i:sP)%",
+  "dateModified": "%modified(Y-m-dTH:i:sP)%",
+  "image": {
+   "@type": "ImageObject",
+   "url": "%post_thumbnail%"
+  }
+ }
+}
