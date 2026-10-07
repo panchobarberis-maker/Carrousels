@@ -21,8 +21,10 @@ class Unsafe(Exception):
     pass
 
 def visible_text(html):
+    # Compare characters only: unwrapping inline tags (e.g. "th<span>e</span>")
+    # changes where get_text() puts separators, not what the reader sees.
     s = BeautifulSoup(html, "html.parser")
-    return re.sub(r"\s+", " ", s.get_text(" ")).strip()
+    return re.sub(r"\s+", "", s.get_text(""))
 
 def _shift_headings(soup):
     hs = soup.find_all(re.compile(r"^h[1-6]$"))
