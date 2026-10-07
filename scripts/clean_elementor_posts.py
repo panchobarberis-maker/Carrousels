@@ -7,7 +7,7 @@ Usage: python3 scripts/clean_elementor_posts.py POST_ID [POST_ID ...]
 import json, sys, os, time
 sys.path.insert(0, os.path.dirname(__file__))
 import post_to_wordpress as wp
-from clean_post_html import clean
+from clean_post_html import clean, Unsafe
 
 BACKUP_DIR = os.path.join(os.path.dirname(__file__), "..", "backups", "fase2-elementor")
 
@@ -40,9 +40,13 @@ def process(pid):
     walk(data)
     if not widgets:
         return "skip: no text-editor widget"
-    for w in widgets:
+    try:
+        cleaned = [clean(w.get("settings", {}).get("editor", "")) for w in widgets]
+    except (Unsafe, ValueError) as e:
+        return f"skip: {e}"
+    for w, html in zip(widgets, cleaned):
         s = w.setdefault("settings", {})
-        s["editor"] = clean(s.get("editor", ""))
+        s["editor"] = html
         if s.get("align") == "justify":
             s["align"] = "left"
     content = "\n".join(w["settings"]["editor"] for w in widgets)

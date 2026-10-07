@@ -13,6 +13,12 @@ from bs4 import BeautifulSoup, NavigableString, Comment
 KEEP_ATTRS = {"a": {"href", "target", "rel", "title"}, "img": {"src", "alt", "width", "height", "title"},
               "td": {"colspan", "rowspan"}, "th": {"colspan", "rowspan", "scope"}, "ol": {"start", "type"}}
 UNWRAP = {"div", "section", "span", "article", "main", "font"}
+# Markup the cleaner must not touch (embedded forms, scripts, iframes)
+UNSAFE = {"form", "input", "textarea", "select", "button", "script", "iframe", "embed", "object"}
+BOLD = re.compile(r"font-weight\s*:\s*(bold|[6-9]00)", re.I)
+
+class Unsafe(Exception):
+    pass
 
 def visible_text(html):
     s = BeautifulSoup(html, "html.parser")
@@ -35,7 +41,12 @@ def clean(html):
     soup = BeautifulSoup(html, "html.parser")
     for c in soup.find_all(string=lambda t: isinstance(t, Comment)):
         c.extract()
+    if soup.find(list(UNSAFE)):
+        raise Unsafe("contains form/script/iframe markup")
     for tag in soup.find_all(True):
+        if tag.name in ("span", "font") and BOLD.search(tag.get("style", "")):
+            tag.name, tag.attrs = "strong", {}
+            continue
         if tag.name in UNWRAP:
             tag.unwrap()
             continue
