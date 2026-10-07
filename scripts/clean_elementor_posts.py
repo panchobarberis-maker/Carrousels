@@ -28,8 +28,10 @@ def process(pid):
     raw = p["meta"].get("_elementor_data")
     if not raw:
         return "skip: no Elementor data"
-    with open(os.path.join(BACKUP_DIR, f"post-{pid}.json"), "w") as f:
-        json.dump({"id": pid, "slug": p["slug"], "content_raw": p["content"]["raw"], "_elementor_data": raw}, f)
+    backup = os.path.join(BACKUP_DIR, f"post-{pid}.json")
+    if not os.path.exists(backup):  # keep the original, never a re-cleaned copy
+        with open(backup, "w") as f:
+            json.dump({"id": pid, "slug": p["slug"], "content_raw": p["content"]["raw"], "_elementor_data": raw}, f)
     data = json.loads(raw)
     widgets = []
     def walk(nodes):

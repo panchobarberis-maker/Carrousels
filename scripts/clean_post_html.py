@@ -43,6 +43,9 @@ def clean(html):
     soup = BeautifulSoup(html, "html.parser")
     for c in soup.find_all(string=lambda t: isinstance(t, Comment)):
         c.extract()
+    # ChatGPT's message box (upload button, input) pasted along with the answer
+    for f in soup.find_all("form", attrs={"data-type": "unified-composer"}):
+        f.decompose()
     if soup.find(list(UNSAFE)):
         raise Unsafe("contains form/script/iframe markup")
     for tag in soup.find_all(True):
