@@ -1,0 +1,81 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LegalService",
+      "@id": "https://langefirm.com/#legalservice",
+      "name": "The Lange Firm",
+      "legalName": "Evan Lange PLLC",
+      "alternateName": "Evan Lange Law",
+      "description": "Houston-area employment law firm led by attorney Evan Lange. Represents employees in wrongful termination, workplace harassment, discrimination, retaliation, unpaid wages and EEOC claims, and helps Texas families with probate and estate planning.",
+      "url": "https://langefirm.com/",
+      "logo": "https://langefirm.com/wp-content/uploads/2025/08/Copy-of-Lange-Logo-scaled-e1754415456958.webp",
+      "image": "https://langefirm.com/wp-content/uploads/2025/06/lf-home-slider-v04-2.webp",
+      "telephone": "+1-713-357-6994",
+      "foundingDate": "2019-03",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "14015 Southwest Fwy #14",
+        "addressLocality": "Sugar Land",
+        "addressRegion": "TX",
+        "postalCode": "77478",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {"@type": "City", "name": "Houston", "containedInPlace": {"@type": "State", "name": "Texas"}},
+        {"@type": "City", "name": "Sugar Land"},
+        {"@type": "State", "name": "Texas"}
+      ],
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }],
+      "knowsAbout": [
+        "Employment law", "Wrongful termination", "Workplace harassment", "Sexual harassment",
+        "Workplace discrimination", "Retaliation", "EEOC charges", "Unpaid wages and overtime",
+        "Severance agreements", "FMLA leave", "Non-compete agreements", "Probate", "Estate planning"
+      ],
+      "founder": {"@id": "https://langefirm.com/#evan-lange"},
+      "employee": {"@id": "https://langefirm.com/#evan-lange"},
+      "department": {"@id": "https://langefirm.com/#houston-office"},
+      "sameAs": [
+        "https://www.facebook.com/evanlangelaw",
+        "https://www.yelp.com/biz/evan-lange-law-sugar-land"
+      ]
+    },
+    {
+      "@type": "LegalService",
+      "@id": "https://langefirm.com/#houston-office",
+      "name": "The Lange Firm – Houston Office",
+      "url": "https://langefirm.com/",
+      "telephone": "+1-713-357-6994",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4511 Yoakum Blvd., Suite 115",
+        "addressLocality": "Houston",
+        "addressRegion": "TX",
+        "postalCode": "77006",
+        "addressCountry": "US"
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "17:00"
+      }],
+      "parentOrganization": {"@id": "https://langefirm.com/#legalservice"}
+    },
+    {
+      "@type": "Person",
+      "@id": "https://langefirm.com/#evan-lange",
+      "name": "Evan Lange",
+      "jobTitle": "Employment Attorney and Managing Partner",
+      "url": "https://langefirm.com/team-post/evan-lange/",
+      "worksFor": {"@id": "https://langefirm.com/#legalservice"},
+      "knowsAbout": ["Employment law", "Wrongful termination", "Workplace discrimination", "Probate", "Estate planning"],
+      "sameAs": ["https://www.linkedin.com/in/evan-lange-b02212a5/"]
+    }
+  ]
+}
