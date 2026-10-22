@@ -7,7 +7,7 @@ Usage: python3 scripts/check_cannibalization.py blog/new-post.html [blog/other.h
 Exit code 1 if any draft is BLOCKED (too close to an existing post).
 
 Thresholds (tuned on the 2026-10 audit, where real duplicates scored 0.55+ body or 0.6+ title):
-  BLOCK  body >= 0.45  or title >= 0.55  -> update/link the existing post instead of publishing
+  BLOCK  body >= 0.45  or title >= 0.55  -> improve/link the existing post instead of publishing (no redirects)
   REVIEW body >= 0.30  or title >= 0.40  -> publish only if the search intent is clearly different
 """
 import html, json, os, re, sys, time

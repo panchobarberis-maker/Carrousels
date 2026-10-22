@@ -28,8 +28,10 @@ Credentials: environment API credential for langefirm.com (Basic auth, injected 
 - Do not create a new post on a topic that already has a page; update/link the existing one instead
   (see the cannibalization audit).
 - **Before publishing, always run `python3 scripts/check_cannibalization.py blog/<slug>.html`.**
-  BLOCK = do not publish (improve the existing post and 301 the weaker URL instead); REVIEW = publish
-  only if the search intent is clearly different, and cross-link the two posts.
+  BLOCK = do not publish (improve the existing post instead); REVIEW = publish only if the search
+  intent is clearly different, and cross-link the two posts.
+- **Never create or change redirects** (Rank Math Redirections or anything else) unless the user asks.
+  For a duplicate URL, use a Rank Math canonical pointing to the main page instead.
 
 ## Editing existing posts
 - Posts are Elementor text-editor widgets: edit `_elementor_data` and keep `content` in sync.
