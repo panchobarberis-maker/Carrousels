@@ -12,21 +12,33 @@ Dos frentes:
 
 ## PARTE 1 — Mensajes a nuevos seguidores
 
-### 1.1 La limitación técnica (importante)
+### 1.1 Saludo automático a nuevos seguidores: "Follow to DM" de ManyChat
 
-**Instagram no permite automatizar un DM cuando alguien te sigue.** La API oficial de Meta (la que usan ManyChat, Chatfuel, etc.) solo deja mandar mensajes automáticos cuando **el usuario inicia la interacción**: te escribe un DM, comenta un post, responde una story o hace clic en un anuncio. Y solo dentro de las 24 h siguientes.
+**Sí se puede, y de forma oficial.** ManyChat lanzó en octubre de 2025 la función **"Follow to DM"** (en la app aparece como la plantilla *"Say hi to new followers"*). Está aprobada por Meta: manda un DM apenas alguien sigue la cuenta.
 
-Las herramientas que prometen "DM automático a nuevos seguidores" usan bots no oficiales. Violan los términos de Instagram y pueden terminar en un bloqueo o el cierre de la cuenta. **Para la cuenta de un estudio jurídico no vale la pena el riesgo.**
+Condiciones a tener en cuenta:
+- **Sigue en beta y Meta habilita cuenta por cuenta.** No depende de configurar bien ManyChat. Con menos de ~1000 seguidores o poca interacción, lo más probable es que no la habiliten.
+- **Un solo mensaje por seguidor.** Si alguien deja de seguir y vuelve a seguir, no se dispara de nuevo. Meta también limita a un mensaje Follow-to-DM por usuario por semana.
+- **Se reportaron demoras y fallas** (foro de ManyChat, marzo de 2026). Conviene revisar cada semana que esté funcionando.
+- **Hay que evitar otras herramientas** que prometen lo mismo con bots no oficiales: violan los términos de Instagram y ponen en riesgo la cuenta del estudio.
 
-Por eso la estrategia combina tres cosas:
+**Plan:** activar Follow to DM si la cuenta es elegible. Si no lo es, o mientras tanto, usar la bienvenida manual (punto A) como respaldo.
 
 | Qué | Cómo | Automatizado |
 |---|---|---|
-| A. Bienvenida manual a nuevos seguidores | Una persona del equipo, 15 min por día, con respuestas guardadas | Semi (plantillas) |
+| A. Bienvenida a nuevos seguidores | **Follow to DM** de ManyChat; si no está disponible, manual con respuestas guardadas | ✅ (o semi) |
 | B. Comentario → DM por palabra clave | ManyChat con disparador "comment keyword" en cada carrusel | ✅ 100 % |
 | C. Respuesta automática a DMs y stories | ManyChat: "Welcome message", "Ice breakers" y "Story reply" | ✅ 100 % |
 
-### 1.2 A — Bienvenida manual (semi-automática)
+**Flujo Follow to DM** (usar los mismos textos `/hi` y `/hola` de abajo como mensaje de apertura):
+1. Mensaje de bienvenida + botones: `[Learn my rights]` `[I have a problem at work]` `[Español]`.
+2. `[Learn my rights]` → link al recurso gratis (checklist) y "Follow along, we post every week."
+3. `[I have a problem at work]` → disclaimer + teléfono + formulario de intake, y aviso al equipo.
+4. `[Español]` → el mismo flujo en español.
+
+> Como lo dispara el seguidor al seguir la cuenta y el mensaje no habla de su caso, es contenido de bienvenida y no captación directa. Igual, Evan tiene que aprobar el texto.
+
+### 1.2 A — Bienvenida manual (respaldo si Follow to DM no está disponible)
 
 **Rutina diaria (15 min):**
 1. Ir a Notificaciones → filtro "Seguidores".
@@ -225,7 +237,7 @@ Formato: 45 a 60 min + 15 de Q&A, por Zoom. Al final: one-pager "When to refer a
 ## Próximos pasos
 
 1. [ ] Evan revisa y aprueba los textos de las Partes 1 y 2 (y consulta lo de las reglas de publicidad de Texas).
-2. [ ] Configurar ManyChat con la cuenta de Instagram de The Lange Firm: ice breakers, welcome message y la primera palabra clave.
+2. [ ] Conectar ManyChat con la cuenta de Instagram de The Lange Firm y ver si aparece la plantilla "Say hi to new followers" (Follow to DM). Configurar los ice breakers, el welcome message y la primera palabra clave.
 3. [ ] Crear el primer recurso descargable (checklist de overtime) y su página en langefirm.com.
 4. [ ] Cargar las respuestas guardadas `/hi`, `/hola` y `/caso` en Instagram.
 5. [ ] Elegir el primer tema de webinar e iniciar la acreditación CLE.
