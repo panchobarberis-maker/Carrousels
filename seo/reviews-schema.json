@@ -1,0 +1,240 @@
+{
+ "@context": "https://schema.org",
+ "@graph": [
+  {
+   "@type": "LegalService",
+   "@id": "https://langefirm.com/#legalservice",
+   "name": "The Lange Firm",
+   "url": "https://langefirm.com/",
+   "image": "https://langefirm.com/wp-content/uploads/2025/06/lf-home-slider-v04-2.webp",
+   "telephone": "+1-713-357-6994",
+   "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "14015 Southwest Fwy #14",
+    "addressLocality": "Sugar Land",
+    "addressRegion": "TX",
+    "postalCode": "77478",
+    "addressCountry": "US"
+   },
+   "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "15"
+   },
+   "review": [
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Laura Magee"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan was amazing to work with. Going into this I had no idea what to expect. He is definitely one of the best and he works really hard to fight for what’s right. Walked me through every step and explained everything throughly. I appreciate everything he did for me!"
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Nha Uven Ngo"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "In legal lands, Evan takes the lead, Tactful, caring, power in every deed. Expertise weaves scenarios bright, Grace and patience, justice in flight. Amid challenges, a fort grand, Victories follows, a winning band. A great lawyer, with compelling flair, I recommend Evan, an advocate rare!"
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Jessica Green"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan was wonderful to work with. He is intelligent, kind and competent, and worked diligently to resolve my dispute with the best possible outcome. I always felt he had my best interest in mind and strove to provide high quality and cost effective service. I certainly plan to utilize his firm in the future for estate planning and have no reservations recommending him to anyone."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Brian Kelly"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "I hired Evan to consult and represent me upon a google search for Texas lawyers. I recommend Evan based on my experience working with him. Pros: Process for hiring was clean, straight forward, and easy. His executive assistant Cory was great and informative. Evan is knowledgeable in his subject matter and authentic in his personality and his recommendations. Cons: It was tough initially to pay for a consult and representation before meeting Evan. However, I knew I made the right decision immediately upon consulting with Evan and he even offered multiple financing and service options to best accommodate my circumstance."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Stephen Duckett"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "It's never too early plan for the unexpected. Despite being in my 30s I wanted to get ahead of the curve and ensure that my last wishes are honored and legally documented so there is no ambiguity when that day eventually comes. I reached out to Evan's office to aide in this process. He did a great job breaking down all of my options and I'm very thankful. We had a consultation, initially, about what I was seeking. He then provided me options and clear pricing. Every step of the process was straightforward. The most difficult part was compiling personal information and making determinations on who would be in my last will and testament, durable and medical power of attorney. Things that we don't often think about needing to document that can be somewhat morbid such as burial vs cremation were all discussed with professionalism. Evan provided digital and physical executed documentation once I reviewed and ensured all information was accurate. Having seen family matters play out in end of life care and the complexities associated it's important to have a legal expert prepare formal documents to ensure your wishes are protected. Take the stress off your family and make an appointment today. I highly recommend his legal services."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Kimberly Michelle Anderson"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan was very thorough and knowledgeable. Has a great sense of humor and will for sure be my choice when needed."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Robert Lee"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan did a wonderful job of making sure I understood all of the options available to me in my estate planning and the implications of my decisions. He patiently and diligently walked me through the entire estate planning process and was very prompt in turning around the documents."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Manuel Garcia-Valles"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "I work in the medical field and had an ADA-EEOC legal issue. I am an older person with lots of experience with lawyers. I had an interaction with Evan Lange Esq. was very impressed with his honesty, candidness and knowledge of the disability laws federal and state. He immediately understood my predicament and proceeded to give very valuable advice. We did not have to pursue any legal actions because my I was able to negotiate with my employer. But in the future I will not hesitate to call upon Mr. Evan Lange if I have a recurrence of this situation or any other involving ADA-EEOC disabilities issues. I would recommend Mr. Lange to anybody having disability or other civil legal problems."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Elisa Cardnell"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan helped me with an employment matter. He was efficient, compassionate, thorough, and knowledgeable. His insight and skill helped resolve the matter and I would 100% recommend him to anyone who needs legal assistance in dealing with their current or former employer."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Patrick Piller"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "My experience with Evan Lange was superb. He is very supporting and goes above and beyond. I trust his advice and process. He follows-up a lot to make sure things are on track. Great communicator all around. 5+ people referred him to me and I am glad I chose him to represent me. He is a great listener and carefully factors everything into the equation. I highly recommend you consider him to represent you!"
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Darrell Nichols"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Y'all if I could give more than 5 stars I would. I worked directly with Evan on an employment contract case and, first of all, i was more than pleased with the outcome of the case. Secondly, Evan's honesty with me throughout the whole process was nothing short of amazing. He will tell you straight up what you need to do and what is the most economic option for YOU as his client. This man truly truly cares about the people that he takes on as clients and it shows in the quality of his work. His communication is professional, to the point, and his arguments are made in a way that are incredibly hard to question. I cannot recommend this man enough."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Carlos G.Quintana"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan represented my business in a contract dispute between us and a large national telecommunications company. He has an interesting communication style, but he is very good at protecting his clients' interests and obtaining positive results. I have quite a lot of experience going over contracts and settlements, but even so, Evan always pointed out something I hadn't thought about that I needed to consider. If you're looking for an attorney that will fight for you and aren't bothered by his unconventional communication style, he is a great choice. I'm glad I hired him."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Patrick Vermaas"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Don't wait to call. I was unsure of needing legal representation for my case but the moment the hearing started I new I was a fish out of water. Evan was a star and he made sure that my side of the story came through. I would not have been able to win my case without him."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Jerry Bacon"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan Lange helped me with my mother's estate when I had to go through the probate process. His expertise and insight were essential to the process. His relationships with the Fort Bend County Clerk and Judge made the entire process as smooth as it could possibly be. As an attourney in good standing with the community, he was quick to put me in touch with resources I needed. He was quick to respond to texts, calls and emails. I always knew where we were in the process."
+    },
+    {
+     "@type": "Review",
+     "author": {
+      "@type": "Person",
+      "name": "Olivar Lucy"
+     },
+     "reviewRating": {
+      "@type": "Rating",
+      "ratingValue": "5",
+      "bestRating": "5",
+      "worstRating": "1"
+     },
+     "reviewBody": "Evan Lange was able to help me incredibly last minute for an incredibly important issue for me, and within my limited timeline, was able to help me compile my various bits of evidence in a compelling, powerful way, and was able to represent me, as well as my needs, clearly and concisely when it came down to the actual event itself. He was incredibly understanding, and understood where I was coming from emotionally, as well as factually, and was able to help me formulate a longer term plan regardless of the outcome of my case, as well as effectively prepare me for what I needed to know/consider before we went forward and he helped represent me for my case. He was very knowledgeable about my situation's needs, and did an amazing job at helping clear up my anxieties, answer my questions, and made sure that all of our i's and t's were properly dotted and crossed, so that there was no chance that anything we presented could be I am thrilled at how well he was able to balance the hostility from the other party, and helping to protect me from the unfair and unjust misrepresentations that they were making, as well as how well he handled the general hostility of the representative we were having to deal with in the middle. Despite the mediator clearly having their own agenda in the matter, he was able to effectively enforce our right to have representation as best as could be done in that situation, and regardless of the outcome of my case, I am at peace with the fact that Evan has enabled us to do everything we possibly could in an incredibly uphill battle that I would have had a next to zero chance of winning had I attempted to represent myself. I absolutely intend to contact him if I ever need representation in similar matters again, and I would encourage anybody reading this to do the same. He is a great attorney who did everything within his power to enable me to have a favorable outcome, and went above and beyond anything I would have expected any lawyer would be able to do for me given the complexity of my situation. Positive Responsiveness, Quality, Professionalism, Value"
+    }
+   ]
+  }
+ ]
+}
