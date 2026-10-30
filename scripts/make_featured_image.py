@@ -29,7 +29,7 @@ h1 em{{color:#E2C97E;font-style:italic}}
 </div></body></html>"""
 SPKI="--ignore-certificate-errors-spki-list=PS48cX347wDVcRynzq+DFqswl2PLNE1sG6uQvxMCOS0="
 with sync_playwright() as p:
-    b=p.chromium.launch(executable_path="/opt/pw-browsers/chromium-1194/chrome-linux/chrome",args=[SPKI])
+    b=p.chromium.launch(executable_path=next(x for x in ("/opt/pw-browsers/chromium-1243/chrome-linux64/chrome","/opt/pw-browsers/chromium-1194/chrome-linux/chrome") if __import__("os").path.exists(x)),args=[SPKI])
     pg=b.new_page(viewport={"width":1536,"height":1024})
     pg.set_content(html,wait_until="networkidle",timeout=60000)
     pg.wait_for_timeout(800)
