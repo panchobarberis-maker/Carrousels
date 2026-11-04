@@ -47,27 +47,39 @@ def fetch_live():
 UA = "Mozilla/5.0 (compatible; LangeBlogBot/1.0)"
 CACHE = os.path.expanduser("~/.cache/lf-guides.json")
 
-def curl(url):
-    return subprocess.run(["curl", "-s", "-A", UA, url], capture_output=True, text=True).stdout
+def curl(url, tries=4):
+    for attempt in range(tries):
+        r = subprocess.run(["curl", "-s", "-A", UA, "-w", "\n%{http_code}", url], capture_output=True, text=True).stdout
+        body, _, code = r.rpartition("\n")
+        if code == "200":
+            return body
+        time.sleep(5 * (attempt + 1))
+    return ""
 
 def fetch_guides():
     if os.path.exists(CACHE) and time.time() - os.path.getmtime(CACHE) < 86400:
         return json.load(open(CACHE))
     from bs4 import BeautifulSoup
-    pages = []
+    pages, complete = [], True
     for sm in ("projects-sitemap.xml", "practice-sitemap.xml"):
         for url in re.findall(r"<loc>([^<]+)</loc>", curl(f"https://langefirm.com/{sm}")):
             if url.rstrip("/").endswith(("projects-post", "practice-post")):
                 continue
-            soup = BeautifulSoup(curl(url), "html.parser")
+            page = curl(url)
+            if not page:
+                complete = False
+                print(f"warning: could not fetch {url}", file=sys.stderr)
+                continue
+            soup = BeautifulSoup(page, "html.parser")
             roots = [x for x in soup.select('[data-elementor-type="wp-page"],[data-elementor-type="wp-post"],[data-elementor-type="single-post"]')
                      if "elementor-218" not in x.get("class", [])]
-            root = max(roots, key=lambda x: len(x.get_text()), default=soup.body)
+            root = max(roots, key=lambda x: len(x.get_text()), default=soup.body or soup)
             title = soup.title.get_text().split(" - ")[0] if soup.title else url
             slug = "/".join(url.rstrip("/").split("/")[-2:])
             pages.append({"slug": slug, "t": html.unescape(title), "text": re.sub(r"\s+", " ", root.get_text(" "))})
-    os.makedirs(os.path.dirname(CACHE), exist_ok=True)
-    json.dump(pages, open(CACHE, "w"))
+    if complete:
+        os.makedirs(os.path.dirname(CACHE), exist_ok=True)
+        json.dump(pages, open(CACHE, "w"))
     return pages
 
 def main(paths):
